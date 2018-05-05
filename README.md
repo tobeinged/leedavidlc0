@@ -22,139 +22,28 @@ For live status: http://lczero.org
 The rest of this page is for users who want to compile the code themselves.
 Of course, we also appreciate code reviews, pull requests and Windows testers!
 
-# Compiling
+程序使用说明
+下载软件后，解压，如果目录内有设置文件，settings.json，则要删除掉。
+安装visual studio 2017 运行库，下载地址：https://github.com/leedavid/leela-chess-to-Chinese-Chess/releases/download/v0.71/VC_redist.x64.rar
+如果机器有多个显卡，就运行mainMultGpu.exe，如果机器只有一个显卡，就运行mainClient.exe
+根据提示输入 Enter username:
+用户名（请输入英文用户） Enter password:
+口令 也是英文 Enter train num per time befor upload:
+一般输入数字 5， 表示训练5局才上传到服务器 Use GpU？1 use or 0 not use : 如果有支持CUDA运算的显卡，就输入1，如果显卡比较老，就输入 0 How many Gpu do u want to use: 如果你想用几块显卡一起运算，就输入数字几，只有一块显卡，就输入1
+QQ 讨论群号：779375937，网站：http://www.lcchess.com/
+加群：点击链接加入群聊【LCCZero】：https://jq.qq.com/?_wv=1027&k=5Epwv5H
+文件说明： GGengineCPU.exe CPU版本的 UCI引擎，可用兵河等界面程序加载 GGengineGPU.exe GPU版本的 UCI引擎，可用兵河等界面程序加载 mainClient.exe 不支持多个显卡的训练程序 mainMultiGpu.exe 支持多个显卡的训练程序 weights.txt 这个是UCI 引擎下棋时会调用的缺省权重文件， 可到 http://www.lcchess.com/networks下载最新的权重文件，并改名成 weights.txt. networks目录，这个目录在界面训练时，会自动从网站上下载最新权重文件去训练，但有时由于网络问题，会出现文件没有下载完成的情况，造成引擎闪退，那么我们可以到上面的网站去下载对应的权重文件，放到这个目录下。主要是看一下权重文件的大小，如果太少，肯定是没有下载完整。
+常见问题 A/Q
+1.	可不可以多开？
+答：可以，如果你的电脑运算能力足够，可以多开，但要看一下任务管理器，最好留一些余量。
 
-## Requirements
+2.	训练程序闪退怎么？
+a.	系统最好是win10, win7没有测试过 b.	要安装 visual studio 2017 运行库, 然后重启 c.	因为引擎使用了 SSE4.2指令，太旧的CPU可能也不支持 d.	检查引擎目录下没有 weigths.txt文件，如果没有，可到群里下载 e.	界面在训练时，需要调用相应的权利文件，请见上述的 networks目录的说明 因为引擎使用CUDA指令，所以使用GPU显卡运行时，最好要安装最新的显卡驱动。N卡驱动下载地址：https://www.geforce.cn/drivers
 
-* GCC, Clang or MSVC, any C++14 compiler
-* boost 1.54.x or later (libboost-all-dev on Debian/Ubuntu)
-* BLAS Library: OpenBLAS (libopenblas-dev) or (optionally) Intel MKL
-* zlib library (zlib1g & zlib1g-dev on Debian/Ubuntu)
-* Standard OpenCL C headers (opencl-headers on Debian/Ubuntu, or at
-  https://github.com/KhronosGroup/OpenCL-Headers/tree/master/opencl22/)
-* OpenCL ICD loader (ocl-icd-libopencl1 on Debian/Ubuntu, or reference implementation at https://github.com/KhronosGroup/OpenCL-ICD-Loader)
-* An OpenCL capable device, preferably a very, very fast GPU, with recent
-  drivers is strongly recommended but not required. (OpenCL 1.2 support should be enough, even
-  OpenCL 1.1 might work).
-* Tensorflow 1.4 or higher (for training)
-* The program has been tested on Linux.
+3. 核显和独显，不算多个显卡吧？
+是的
 
+4. 帮助学习后有什么好处？
+a. 首先感谢您对 中国象棋 alphazero 团队的支持。 b. 你的学习记录将永久记录在网站上。当您达到一定的学习时间时，会以您提供的名字出现在引擎,及网站的赞助名单上。 c. 我们团队还在讨论其它的公平，公开的合适的奖励方案，一旦讨论通过，将会在第一时间公布并实施。
 
-## Example of compiling - Ubuntu 16.04
-
-    # Install dependencies
-    sudo apt install g++ git libboost-all-dev libopenblas-dev opencl-headers ocl-icd-libopencl1 ocl-icd-opencl-dev zlib1g-dev
-
-    # Test for OpenCL support & compatibility
-    sudo apt install clinfo && clinfo
-
-    # Clone git repo
-    git clone https://github.com/glinscott/leela-chess.git
-    cd leela-chess
-    git submodule update --init --recursive
-    mkdir build && cd build
-    
-    # Configure
-    cmake ..
-
-    # Or configure without GPU support
-    cmake -DFEATURE_USE_CPU_ONLY=1 ..
-
-    # Build and run tests
-    make
-    ./tests
-
-# Compiling Client
-
-See https://github.com/glinscott/leela-chess/tree/master/go/src/client/README.md.
-This client will produce self-play games and upload them to http://lczero.org. 
-A central server uses these self-play game data as inputs for the training process.
-
-## Weights
-
-The weights from the distributed training are downloadable from http://lczero.org/networks. The best one is the top network that has some games played on it.
-
-Weights that we trained to prove the engine was solid are here https://github.com/glinscott/lczero-weights. Currently, the best weights were obtained through supervised learning on a human dataset with elo ratings > 2000.
-
-# Training a new net using self-play
-
-Running the Training is not required to help the project, only the central server needs to do this.
-The distributed part is running the client to create self-play games. Those games are uploaded on
-http://lczero.org, and used as the input to the training process.
-
-After compiling lczero (see below), try the following:
-```
-cd build
-cp ../scripts/train.sh .
-./train.sh
-```
-
-This should launch lczero in training mode.  It will begin self-play games, using the weights from weights.txt (initial weights can be downloaded from the repo above).  The training data will be written into the data subdirectory.
-
-Once you have enough games, you can simply kill the process.
-
-To run the training process, you need to have CUDA and Tensorflow installed.
-See the instructions on the Tensorflow page (I used the pip installation method
-into a virtual environment).  NOTE: You need a GPU accelerated version of
-Tensorflow to train, the CPU version doesn't support the input data format that
-is used.
-
-Then, make sure to set up your config. Important fields to edit are the path the
-network is stored in, and the path to the input data.
-```
-cd training/tf
-./parse.py configs/your-config.yaml
-```
-
-That will bring up Tensorflow and start running training. You can look at the config file in `training/tf/configs/example.yaml` to get an idea of all the configurable parameters. This config file is meant to be a unified configuration for all the executable pythonscripts in the training directory.  After starting the above command, you should see output like this:
-```
-2018-01-12 09:57:00.089784: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:02:00.0, compute capability: 5.2)
-2018-01-12 09:57:13.126277: I tensorflow/core/kernels/shuffle_dataset_op.cc:110] Filling up shuffle buffer (this may take a while): 43496 of 65536
-2018-01-12 09:57:18.175088: I tensorflow/core/kernels/shuffle_dataset_op.cc:121] Shuffle buffer filled.
-step 100, policy loss=7.25049 mse=0.0988732 reg=0.254439 (0 pos/s)
-step 200, policy loss=6.80895 mse=0.0904644 reg=0.255358 (3676.48 pos/s)
-step 300, policy loss=6.33088 mse=0.0823623 reg=0.256656 (3652.74 pos/s)
-step 400, policy loss=5.86768 mse=0.0748837 reg=0.258076 (3525.1 pos/s)
-step 500, policy loss=5.42553 mse=0.0680195 reg=0.259414 (3537.3 pos/s)
-step 600, policy loss=5.0178 mse=0.0618027 reg=0.260582 (3600.92 pos/s)
-...
-step 4000, training accuracy=96.9141%, mse=0.00218292
-Model saved in file: /home/gary/tmp/leela-chess/training/tf/leelaz-model-4000
-```
-
-It saves out the new model every 4000 steps.  To evaluate the model, you can play it against itself or another AI:
-```
-cd src
-cp ../training/tf/leelaz-model-4000.txt ./newweights.txt
-cd ../scripts
-./run.sh
-```
-
-This runs an evaluation match using [cutechess-cli](https://github.com/cutechess/cutechess).
-
-## Supervised training
-
-If you have expert games you wish to train from in PGN, you can generate
-training data from those for the network to learn from.  Run:
-```
-./lczero --supervise games.pgn
-```
-That will create a folder `supervise-games`, with the training data.  You can
-then train a network against that as usual.
-
-## Stopping/starting training
-
-It is safe to kill the training process and restart it at any time.  It will
-automatically resume using the tensorflow checkpoint.
-
-You can use this to adjust learning rates, etc.
-
-# Other projects
-
-* [mokemokechicken/reversi-alpha-zero](https://github.com/mokemokechicken/reversi-alpha-zero)
-* [Zeta36/chess-alpha-zero](https://github.com/Zeta36/chess-alpha-zero)
-* [benediamond/chess-alpha-zero](https://github.com/benediamond/chess-alpha-zero/)
-
-# License
-
-The code is released under the GPLv3 or later, except for ThreadPool.h, cl2.hpp and the clblast_level3 subdir, which have specific licenses (compatible with GPLv3) mentioned in those files.
+QQ 讨论群号：779375937，网站：http://www.lcchess.com
