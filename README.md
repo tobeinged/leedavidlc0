@@ -28,7 +28,7 @@ http://www.ggzero.cn
 # 程序使用说明
 
 
-1. 安装visual studio 2017 运行库，下载地址：https://github.com/leedavid/leela-chess-to-Chinese-Chess/releases/download/v0.71/VC_redist.x64.rar
+1. 安装visual studio 2017 运行库，下载地址：https://github.com/leedavid/leela-chess-to-Chinese-Chess/releases/download/v0.71/VC_redist.x64.rar 或 到群共享下载
 
 2. 将下载的训练程序解压到英文目录下，注意，英文路径不能有空格，否则不能正常上传训练数据。
    解压后共二个程序文件。lc0_main.exe 训练程序， lc0.exe 是兼容 UCI 协议的引擎文件。
