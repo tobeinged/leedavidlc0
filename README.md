@@ -22,7 +22,6 @@ For live status: http://lczero.org
 The rest of this page is for users who want to compile the code themselves.
 Of course, we also appreciate code reviews, pull requests and Windows testers!
 
-http://lcc.ya.cn
 http://www.ggzero.cn
 
 # 程序使用说明
@@ -56,4 +55,4 @@ b. 你的学习记录将永久记录在网站上。当您达到一定的学习�
 c. 我们团队还在讨论其它的公平，公开的合适的奖励方案，一旦讨论通过，将会在第一时间公布并实施。
 
 
-QQ 讨论群号：779375937，网站：http://lcc.ya.cn http://www.ggzero.cn
+QQ 讨论群号：779375937，网站：http://www.ggzero.cn
