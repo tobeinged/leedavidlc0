@@ -1,5 +1,4 @@
-[![Linux Build Status](https://travis-ci.org/glinscott/leela-chess.svg?branch=master)](https://travis-ci.org/glinscott/leela-chess)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/w2nymx3wpd0d1da1/branch/master?svg=true)](https://ci.appveyor.com/project/glinscott/leela-chess/branch/master)
+
 
 # Introduction
 
@@ -9,20 +8,8 @@ The goal is to build a strong UCT chess AI following the same type of techniques
 
 We will need to do this with a distributed project, as it requires a huge amount of computations.
 
-Please visit the LCZero forum to discuss: https://groups.google.com/forum/#!forum/lczero, or the github issues.
 
-# Contributing
-
-For precompiled binaries, see:
-* [wiki](https://github.com/glinscott/leela-chess/wiki)
-* [wiki/Getting-Started](https://github.com/glinscott/leela-chess/wiki/Getting-Started)
-
-For live status: http://lczero.org
-
-The rest of this page is for users who want to compile the code themselves.
-Of course, we also appreciate code reviews, pull requests and Windows testers!
-
-# 目前项目进展情况：
+# GGzero 项目进展情况：
 
   自评 ELO 达到了 5500分，弈天桃花岛4星（大概1060的显卡）！
   
