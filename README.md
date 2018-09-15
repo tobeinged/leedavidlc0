@@ -25,6 +25,8 @@ Of course, we also appreciate code reviews, pull requests and Windows testers!
 # 目前项目进展情况：
 
   自评 ELO 达到了 5500分，弈天桃花岛4星（大概1060的显卡）！
+  
+  ![](https://github.com/leedavid/leela-chess-to-Chinese-Chess/blob/master/total-elo.jpg)
 
 https://github.com/leedavid/leela-chess-to-Chinese-Chess/blob/master/total-elo.jpg
 
