@@ -8,16 +8,14 @@ The goal is to build a strong UCT chess AI following the same type of techniques
 
 We will need to do this with a distributed project, as it requires a huge amount of computations.
 
+# GGzero 项目官网地址：
+
+http://www.ggzero.cn
 
 # GGzero 项目进展情况：
 
-  自评 ELO 达到了 5500分，弈天桃花岛4星（大概1060的显卡）！
-  
+  自评 ELO 达到了 5500分，弈天桃花岛4星（大概1060的显卡）！  
   ![](https://github.com/leedavid/leela-chess-to-Chinese-Chess/blob/master/total-elo.jpg)
-
-https://github.com/leedavid/leela-chess-to-Chinese-Chess/blob/master/total-elo.jpg
-
-http://www.ggzero.cn
 
 # 程序使用说明
 
@@ -34,10 +32,11 @@ http://www.ggzero.cn
 5. 运行客户端训练程序 lc0_main.exe, 输入用户名和密码，就可以正常训练了。
 
 
-常见问题 Q/A:
+# 常见问题 Q/A:
 
 1.  问：不能正常训练，怎么办？
     答：点击：lc0.exe, 在lc0.exe的界面里，输入 go nodes 800 回车，如果lc0.exe正常显示棋步了。就表明程序安装准确了。
+    
 2.  问：如何用兵河加载引擎？
     答：先要能正常训练，然后用兵河加载 lc0.exe.  
 
