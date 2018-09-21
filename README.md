@@ -21,7 +21,7 @@ http://www.ggzero.cn
 
   ## 注意：所有的文件都可到 GGzero 官方群号：779375937 的 "GGzero训练客户端" 文件夹下载
 
-1. 安装visual studio 2017 运行库
+1. 安装visual studio 2017 运行库（在群共享GGzero训练客户端下载）。
 
 2. 下载 “GGzeroALL.rar”，解压到英文目录下，注意整个目录不能有中文和空格！！
 
