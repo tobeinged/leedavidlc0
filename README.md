@@ -17,6 +17,12 @@ http://www.ggzero.cn
   自评 ELO 达到了 5500分，弈天桃花岛4星（大概1060的显卡）！  
   ![](https://github.com/leedavid/leela-chess-to-Chinese-Chess/blob/master/total-elo.jpg)
 
+# 谷歌 colab 跑谱共享笔记本地址
+
+https://colab.research.google.com/drive/1FYJSUuZNXnhWKs9tLQbjmYtklMhlnejG
+
+只要用上面的colab jupyter笔记本，就能跑谱参加训练！
+
 # 程序使用说明
 
   ## 注意：所有的文件都可到 GGzero 官方群号：779375937 的 "GGzero训练客户端" 文件夹下载
