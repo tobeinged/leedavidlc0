@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #rm -rf /etc/apt/sources.list.d
-apt-get install protobuf-compiler
+#apt-get install protobuf-compiler
 #wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1704/x86_64/cuda-repo-ubuntu1704_9.0.176-1_amd64.deb
 #apt-get install -y --fix-missing --no-install-recommends dirmngr
 #dpkg -i cuda-repo-ubuntu1704_9.0.176-1_amd64.deb
