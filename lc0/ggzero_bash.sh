@@ -6,8 +6,6 @@ apt-get install protobuf-compiler
 #cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64/
 #chmod a+r /usr/local/cuda/lib64/libcudnn*
 
-
-
 apt-get update
 apt-get install -y --fix-missing --no-install-recommends cuda-compiler-9-2 cuda-cublas-dev-9-2 cuda-cudart-dev-9-2
 apt-get install -y --fix-missing --no-install-recommends nvidia-opencl-dev libopenblas-dev
@@ -21,4 +19,6 @@ wget -c https://github.com/leedavid/leela-chess-to-Chinese-Chess/raw/master/lc0/
 wget -c https://github.com/leedavid/leela-chess-to-Chinese-Chess/raw/master/lc0/lc0
 chmod 777 lc0
 chmod 777 ggzero_linux
+
+
 
