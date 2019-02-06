@@ -7,7 +7,7 @@ apt-get install protobuf-compiler
 #chmod a+r /usr/local/cuda/lib64/libcudnn*
 
 apt-get update
-apt-get install -y --fix-missing --no-install-recommends cuda-compiler-9-2 cuda-cublas-dev-9-2 cuda-cudart-dev-9-2
+apt-get install -y --fix-missing --no-install-recommends cuda-compiler-10-0 cuda-cublas-dev-10-0 cuda-cudart-dev-10-0
 apt-get install -y --fix-missing --no-install-recommends nvidia-opencl-dev libopenblas-dev
 
 #wget http://developer.download.nvidia.com/compute/redist/cudnn/v7.3.1/cudnn-9.2-linux-x64-v7.3.1.20.tgz
