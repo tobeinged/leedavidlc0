@@ -19,7 +19,8 @@ http://www.ggzero.cn
 
 # 谷歌 colab 跑谱共享笔记本地址
 
-https://colab.research.google.com/drive/1FYJSUuZNXnhWKs9tLQbjmYtklMhlnejG
+https://colab.research.google.com/drive/18yj5p1vF50_U4-X0iMf4eq-hzFWUg78z
+
 
 只要用上面的colab jupyter笔记本，就能跑谱参加训练！
 
