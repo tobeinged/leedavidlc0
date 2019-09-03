@@ -1,5 +1,5 @@
 #!/bin/bash
-apt-get install protobuf-compiler
+# apt-get install protobuf-compiler 20190904
 #wget http://developer.download.nvidia.com/compute/redist/cudnn/v7.1.4/cudnn-9.0-linux-x64-v7.1.tgz
 #tar -xzvf cudnn-9.0-linux-x64-v7.1.tgz
 #cp -P cuda/include/cudnn.h /usr/local/cuda/include/cudnn.h
