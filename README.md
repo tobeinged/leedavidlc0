@@ -22,9 +22,13 @@ http://bbs.ggzero.cn
   ![](https://github.com/leedavid/leela-chess-to-Chinese-Chess/blob/master/total-elo.jpg)
   
   GGzero 参加 第三届楚河汉界象棋人工智能第三名 
+  
   机器配置： 
+  
   GGzero    2070super X 4 无开局库，无残局库
+  
   其它引擎   2496V4 44核心 有开局库，有残局库
+  
   用时：10分+3秒 
   
 
