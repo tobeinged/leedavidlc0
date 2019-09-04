@@ -18,8 +18,10 @@ http://bbs.ggzero.cn
 
 # GGzero 项目进展情况：
 
-  自评 ELO 达到了 5500分，弈天桃花岛4星（大概1060的显卡）！  
+  自评 ELO 达到了3700 分，弈天桃花岛9星（大概1060的显卡）！  
   ![](https://github.com/leedavid/leela-chess-to-Chinese-Chess/blob/master/total-elo.jpg)
+  
+  ![](https://github.com/leedavid/leela-chess-to-Chinese-Chess/blob/master/lc0/20190904.png)
   
   GGzero 参加 第三届楚河汉界象棋人工智能第三名 
   
