@@ -48,9 +48,9 @@ https://colab.research.google.com/drive/18yj5p1vF50_U4-X0iMf4eq-hzFWUg78z
 
 2. 下载 “GGzeroALL.rar”，解压到英文目录下，注意整个目录不能有中文和空格！！
 
-3. 下载最新的显卡驱动，可到 nvidia网站上下载，或到群共享 GGzero训练客户端 目录下载
+3. GGzero目前只支持cuda加速，需要显存2G以上的N卡才能正常运行。请下载最新的显卡驱动，可到 nvidia 网站上下载，或到群共享 GGzero训练客户端 目录下载
 
-4. 运行客户端训练程序 lc0_main.exe, 输入用户名和密码，就可以正常训练了。
+4. 运行客户端训练程序 lc0_main.exe, 输入用户名和密码（输入时会自动注册），就可以正常训练了。
 
 5. 训练时，客户端下载的权重保存在 client-cache 目录下面，如果你想用 GGzero 下棋，请将 client-cache 目录下的最新权重文件复制到引擎文件lc0.exe目录下面。然后用支持UCI协议的象棋界面加载 lc0.exe， 就可以正常下棋了。
 
