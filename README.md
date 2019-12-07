@@ -46,7 +46,7 @@ https://colab.research.google.com/drive/18yj5p1vF50_U4-X0iMf4eq-hzFWUg78z
 
 1. 安装visual studio 2019 运行库（在群共享GGzero训练客户端下载）。
 
-2. 下载 “GGzeroALL.rar”，解压到英文目录下，注意整个目录不能有中文和空格！！，否则
+2. 下载 “GGzeroALL.rar”，解压到英文目录下，注意整个目录不能有中文和空格！！，否则不能正常上传训练棋谱到网站。
 
 3. GGzero目前只支持cuda加速，需要显存2G以上的N卡才能正常运行。请下载最新的显卡驱动，可到 nvidia 网站上下载，或到群共享 GGzero训练客户端 目录下载
 
